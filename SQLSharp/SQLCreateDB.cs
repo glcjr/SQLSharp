@@ -59,5 +59,9 @@ namespace SQLSharp
         {
             return $"CREATE DATABASE {DataBase};";
         }
+        public string GetMySql()
+        {
+            return GetSql();
+        }
     }
 }

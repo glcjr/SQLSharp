@@ -84,5 +84,9 @@ namespace SQLSharp
         {
             return $"{GetCreateIndex()} {GetON()};";
         }
+        public string GetMySql()
+        {
+            return GetSql();
+        }
     }
 }

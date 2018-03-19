@@ -109,5 +109,13 @@ namespace SQLSharp
                 temp.Add(WhereFields.GetParameterList());           
             return temp;
         }
+        public string GetMySql()
+        {
+            return GetSql();
+        }
+        public string GetMySqlWithParameters()
+        {
+            return GetSqlWithParameters();
+        }
     }
 }

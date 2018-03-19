@@ -74,7 +74,7 @@ namespace SQLiteSharp
                 for (int index = 0; index < Fields.Count; index++)
                     table.AddField(Fields[index], FieldType[index], Int32.Parse(Length[index]), NotNullable[index], 
                         AutoIncrement[index], IsPrimaryKey[index]);
-                DoCreateCommand(sqlcon, table.GetCreateSql());
+                DoCreateCommand(sqlcon, table.GetSql());
             }
             catch
             { }
@@ -92,7 +92,7 @@ namespace SQLiteSharp
         public SQLiteCreate(SQLiteConnection sqlcon, string tablename, List<SQLField> Fields)
         {
             SQLCreateTable table = new SQLCreateTable(tablename, Fields);
-            DoCreateCommand(sqlcon, table.GetCreateSql());            
+            DoCreateCommand(sqlcon, table.GetSql());            
         }
         /// <summary>
         /// This is the standard constructor that takes a Create Table Sql statement and applies it to the Sqlite database. 
@@ -113,7 +113,7 @@ namespace SQLiteSharp
         /// <param name="table">This contains a class of everything concerning the table to create</param>
         public SQLiteCreate(SQLiteConnection sqlcon, SQLCreateTable table)
         {
-            DoCreateCommand(sqlcon, table.GetCreateSql());
+            DoCreateCommand(sqlcon, table.GetSql());
         }
         private void DoCreateCommand(SQLiteConnection sqlcon, string commandtext)
         {

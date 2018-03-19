@@ -80,6 +80,7 @@ namespace SQLSharp
         {
             return $"{GetCreateViewAs()} {GetSelectFrom()} {GetJoinON()} {GetWhereParam()} {GetGroupBy()} {GetHavingParam()} {GetOrderBy()};";
         }
+        
 
     }
 }

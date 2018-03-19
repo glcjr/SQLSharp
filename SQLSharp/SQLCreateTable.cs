@@ -59,8 +59,8 @@ namespace SQLSharp
         /// </summary>
         /// <param name="nm">The name to give the table</param>
         /// <param name="fds">Variable that contains the fields for the table.</param>
-        public SQLCreateTable(string nm, List<SQLField> fds):this(nm)
-        {            
+        public SQLCreateTable(string nm, List<SQLField> fds) : this(nm)
+        {
             Fields = fds;
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace SQLSharp
         /// Creates the SQL to create the table based on the table name and the fields that have been added
         /// </summary>
         /// <returns>returns the SQL statement that creates the table</returns>
-        public string GetCreateSql()
+        public string GetSql()
         {
             string commandtext = $"CREATE TABLE IF NOT EXISTS {TableName} (";
             for (int index = 0; index < Fields.Count; index++)
@@ -97,6 +97,10 @@ namespace SQLSharp
             }
             commandtext = Utilities.RemoveLastCommaAddPar(commandtext) + ";";
             return commandtext;
+        }
+        public string getMySql()
+        { 
+            return GetSql();
         }
         
     }

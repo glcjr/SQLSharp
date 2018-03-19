@@ -59,5 +59,9 @@ namespace SQLSharp
         {
             return $"DROP DATABASE {DataBase};";
         }
+        public string GetMySql()
+        {
+            return GetSql();
+        }
     }
 }
