@@ -260,5 +260,13 @@ namespace SQLSharp
                 temp.Add(HavingFields.GetParameterList("@H"));
             return temp;
         }
+        public virtual string GetMySql()
+        {
+            return GetSql();
+        }
+        public virtual string GetMySqlWithParameters()
+        {
+            return GetMySqlWithParameters();
+        }
     }
 }

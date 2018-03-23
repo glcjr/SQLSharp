@@ -80,7 +80,14 @@ namespace SQLSharp
         {
             return $"{GetCreateViewAs()} {GetSelectFrom()} {GetJoinON()} {GetWhereParam()} {GetGroupBy()} {GetHavingParam()} {GetOrderBy()};";
         }
-        
+        public override string GetMySql()
+        {
+            return GetSql();
+        }
+        public override string GetMySqlWithParameters()
+        {
+            return GetSqlWithParameters();
+        }
 
     }
 }

@@ -116,6 +116,6 @@ namespace SQLSharp
         public string GetMySqlWithParameters()
         {
             return GetSqlWithParameters();
-        }
+        }        
     }
 }
