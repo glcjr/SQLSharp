@@ -267,6 +267,6 @@ namespace SQLSharp
         public virtual string GetMySqlWithParameters()
         {
             return GetMySqlWithParameters();
-        }
+        }       
     }
 }

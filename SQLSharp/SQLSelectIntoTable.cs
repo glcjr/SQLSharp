@@ -96,5 +96,10 @@ namespace SQLSharp
         {
             return $"{GetSelectFrom()}{GetWhere()}{GetGroupBy()}{GetHaving()}{GetOrderBy()};";
         }
+        public override string GetMySql()
+        {
+            return GetSql();
+        }
+        
     }
 }

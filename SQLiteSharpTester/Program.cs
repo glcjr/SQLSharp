@@ -121,7 +121,7 @@ namespace SQLiteSharpTester
             //update a field with SQLUpdateTable and SQLiteUpdate
             SQLUpdateTable updatetable = new SQLUpdateTable("Customers", new SQLVarVal("State", "HI"), new SQLWhereVar("State", "JI"));
             Console.WriteLine("Changing state in customers table");
-            Console.WriteLine(updatetable.GetSQL());            
+            Console.WriteLine(updatetable.GetSql());            
             SQLiteUpdate update = new SQLiteUpdate(db, updatetable);
 
             //passing normal SQL rather than building it in code is possible

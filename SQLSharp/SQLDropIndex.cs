@@ -44,12 +44,16 @@ namespace SQLSharp
     {
         private string IndexName;
         private string TableName;
-        public SQLDropIndex(string indexname, string tablename)
+        public SQLDropIndex(string indexname, string tablename="")
         {
             IndexName = indexname;
             TableName = tablename;
         }
         public string GetSql()
+        {
+            return $"DROP INDEX {IndexName};";
+        }
+        public string GetSqlServ()
         {
             return $"DROP INDEX {TableName}.{IndexName};";
         }

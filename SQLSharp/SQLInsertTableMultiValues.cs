@@ -111,7 +111,7 @@ namespace SQLSharp
             command = Utilities.RemoveLastComma(command) + ";";
             return command;
         }
-        public string GetSqlwithParameters()
+        public string GetSqlWithParameters()
         {
             string fields = Fields.GetFieldNames();
             string pfields = Fields.GetParamFieldNames();
@@ -131,6 +131,14 @@ namespace SQLSharp
 
             }
             return temp;
+        }
+        public string GetMySql()
+        {
+            return GetSql();
+        }
+        public string GetMySqlWithParameters()
+        {
+            return GetSqlWithParameters();
         }
     }
 }

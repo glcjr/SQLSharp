@@ -85,14 +85,14 @@ namespace SQLSharp
         {
             WhereFields.Add(new SQLWhereVar(con, field1, field2, operand, isnum));
         }
-        public string GetSQL()
+        public string GetSql()
         {
             string command = $"Update {TableName} SET { Utilities.RemoveLastComma(Variables.GetFieldOperandValueasStringorNum())}";
             if (WhereFields.Count() > 0)
                 command += $" WHERE {Utilities.RemoveLastComma(WhereFields.GetFieldOperandValueasStringorNum())};";
             return command;
         }
-        public string GetSQLWithParameters()
+        public string GetSqlWithParameters()
         {
             string command = $"Update {TableName} SET { Utilities.RemoveLastComma(Variables.GetFieldOperandParameter("@U"))}";
             if (WhereFields.Count() > 0)
@@ -107,6 +107,14 @@ namespace SQLSharp
             if (Variables.Count() > 0)
                 temp.Add(Variables.GetParameterList("@U"));
             return temp;
+        }
+        public string GetMySql()
+        {
+            return GetSql();
+        }
+        public string GetMySqlWithParameters()
+        {
+            return GetSqlWithParameters();
         }
     }
 }

@@ -125,8 +125,8 @@ namespace SQLiteSharp
                 {
                     using (var command = db.CreateCommand())
                     {
-                        command.CommandText = table.GetSqlwithParameters();
-                        CommandPerformed += $"{table.GetSqlwithParameters()}{Environment.NewLine}{vars.ToString()}\r";
+                        command.CommandText = table.GetSqlWithParameters();
+                        CommandPerformed += $"{table.GetSqlWithParameters()}{Environment.NewLine}{vars.ToString()}\r";
                         List<SqliteParameter> Params = GetCommandParameters(vars);
                         if (Params.Count > 0)
                         {

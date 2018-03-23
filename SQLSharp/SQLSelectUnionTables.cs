@@ -68,5 +68,9 @@ namespace SQLSharp
         {
             return $"{Table1.GetSql()} UNION {PrintAll()} {Table2.GetSql()};";
         }
+        public string GetMySql()
+        {
+            return GetSql();
+        }        
     }
 }

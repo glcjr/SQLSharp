@@ -113,27 +113,32 @@ namespace SQLSharp
         {
             return $"{GetSelectFrom()}{GetJoinON()}{GetWhere()}{GetGroupBy()}{GetHaving()}{GetOrderBy()};";
         }
-            //new public string GetSql()
-            //{
-            //    string command = $"SELECT {GetDistinct()} {SelectFields.GetFieldNames()} FROM {MainTable}";
-            //    if (JoinTables.Count == JoinFields.Count)
-            //        for (int index = 0; index < JoinTables.Count; index++)
-            //            command += $" {JoinFields[index].GetJoinType()} JOIN {JoinTables[index]} ON {JoinFields[index].GetJoinSQL()}";
-            //    if ((WhereFields.Count() > 0) || (WhereINValues.Count() > 0) ||SelectInTable != null)
-            //    {
-            //        command += $" WHERE ";
-            //        if (WhereINValues.Count() > 0)
-            //            command += $"{WhereInField.GetName()} IN ({WhereINValues.GetFieldValues()}) ";
-            //        else if (SelectInTable != null)
-            //            command += $"{WhereInField.GetName()} IN ({SelectInTable.GetSql()}) ";
-            //        if (WhereFields.Count() > 0)
-            //        command += $"{WhereFields.GetFieldOperandValueasStringorNum()}";
-            //    }
-            //    if (OrderByFields.Count() > 0)
-            //        command += $" ORDER BY {OrderByFields.GetFieldNames()}";
-            //    command += ";";
-            //    return command;
-
-            //}
+        public override string GetMySql()
+        {
+            return GetSql();
         }
+        
+        //new public string GetSql()
+        //{
+        //    string command = $"SELECT {GetDistinct()} {SelectFields.GetFieldNames()} FROM {MainTable}";
+        //    if (JoinTables.Count == JoinFields.Count)
+        //        for (int index = 0; index < JoinTables.Count; index++)
+        //            command += $" {JoinFields[index].GetJoinType()} JOIN {JoinTables[index]} ON {JoinFields[index].GetJoinSQL()}";
+        //    if ((WhereFields.Count() > 0) || (WhereINValues.Count() > 0) ||SelectInTable != null)
+        //    {
+        //        command += $" WHERE ";
+        //        if (WhereINValues.Count() > 0)
+        //            command += $"{WhereInField.GetName()} IN ({WhereINValues.GetFieldValues()}) ";
+        //        else if (SelectInTable != null)
+        //            command += $"{WhereInField.GetName()} IN ({SelectInTable.GetSql()}) ";
+        //        if (WhereFields.Count() > 0)
+        //        command += $"{WhereFields.GetFieldOperandValueasStringorNum()}";
+        //    }
+        //    if (OrderByFields.Count() > 0)
+        //        command += $" ORDER BY {OrderByFields.GetFieldNames()}";
+        //    command += ";";
+        //    return command;
+
+        //}
+    }
 }

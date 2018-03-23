@@ -87,5 +87,13 @@ namespace SQLSharp
         {
             return new SQLParamList(Variables);                      
         }
+        public string GetMySql()
+        {
+            return GetSql();
+        }
+        public string GetMySqlWithParameters()
+        {
+            return GetSqlWithParameters();
+        }
     }
 }

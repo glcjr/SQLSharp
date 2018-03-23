@@ -68,14 +68,14 @@ namespace SQLiteSharp
         }
         private void DoUpdateCommand(SQLiteConnection sqlcon, SQLUpdateTable table)
         {
-            CommandPerformed = $"{table.GetSQLWithParameters()}{Environment.NewLine}{table.GetParamList().ToString()}";
-            SQLPerformed = table.GetSQL();
+            CommandPerformed = $"{table.GetSqlWithParameters()}{Environment.NewLine}{table.GetParamList().ToString()}";
+            SQLPerformed = table.GetSql();
             try
             {
                 SqliteConnection db = sqlcon.GetConnection();
                 using (SqliteCommand command = db.CreateCommand())
                 {
-                    command.CommandText = table.GetSQLWithParameters();
+                    command.CommandText = table.GetSqlWithParameters();
                     List<SqliteParameter> Params = GetCommandParameters(table.GetParamList());
                     if (Params.Count > 0)
                     {

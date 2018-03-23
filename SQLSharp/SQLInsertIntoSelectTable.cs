@@ -120,5 +120,9 @@ namespace SQLSharp
         {
             return $"{GetInsert()} {SelectTable.GetSql()}";
         }
+        public string GetMySql()
+        {
+            return GetSql();
+        }
     }
 }
